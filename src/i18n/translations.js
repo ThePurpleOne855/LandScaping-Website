@@ -4,7 +4,7 @@ export const TRANSLATIONS = {
     nav: { services: "Services", area: "Service Area", about: "About", reviews: "Reviews" },
     topbar: { tagline: "LAWN · GARDEN · CARE — KISSIMMEE, FL" },
     hero: {
-      badge: "NEW IN OSCEOLA COUNTY · LAWN · GARDEN · POOL",
+      badge: "SERVING OSCEOLA COUNTY · LAWN · GARDEN · POOL",
       h1a: "A YARD", h1b: "WORTH", h1c: "HOLLERIN'", h1d: "ABOUT.",
       sub: "Honest mow-blow-and-go, sprinkler repairs, palm trimming, pressure washing, and pool care for Kissimmee homeowners. Same crew, same truck, every visit.",
       hoursLabel: "HOURS",
@@ -59,7 +59,7 @@ export const TRANSLATIONS = {
       area: "📍 Serving Kissimmee & Osceola County, FL",
     },
     footer: {
-      tagline: "A new family-run lawn, garden, pool & pressure-washing outfit serving Kissimmee, St. Cloud, Celebration, Poinciana, and the rest of Osceola County.",
+      tagline: "A family-run lawn, garden, pool & pressure-washing team serving Kissimmee, St. Cloud, Celebration, Poinciana, and the rest of Osceola County.",
       lic: "LICENSED · INSURED · LOCALLY OPERATED",
       servicesH: "SERVICES", areaH: "SERVICE AREA", callH: "CALL THE SHOP",
       hoursLines: ["Mon–Sat · 7am–6pm", "Serving Kissimmee &", "all of Osceola County, FL"],
@@ -82,7 +82,7 @@ export const TRANSLATIONS = {
     nav: { services: "Servicios", area: "Área de Servicio", about: "Acerca", reviews: "Reseñas" },
     topbar: { tagline: "JARDÍN · CÉSPED · CUIDADO — KISSIMMEE, FL" },
     hero: {
-      badge: "NUEVO EN OSCEOLA · CÉSPED · JARDÍN · PISCINA",
+      badge: "SIRVIENDO OSCEOLA · CÉSPED · JARDÍN · PISCINA",
       h1a: "UN JARDÍN", h1b: "DEL QUE", h1c: "PRESUMIR", h1d: "EN CASA.",
       sub: "Corte de césped, reparación de aspersores, poda de palmeras, lavado a presión y limpieza de piscinas para los hogares de Kissimmee. El mismo equipo, la misma camioneta, cada visita.",
       hoursLabel: "HORARIO",
@@ -137,7 +137,7 @@ export const TRANSLATIONS = {
       area: "📍 Atendiendo Kissimmee y el condado de Osceola, FL",
     },
     footer: {
-      tagline: "Una nueva empresa familiar de césped, jardín, piscina y lavado a presión que atiende Kissimmee, St. Cloud, Celebration, Poinciana y el resto del condado de Osceola.",
+      tagline: "Empresa familiar de césped, jardín, piscina y lavado a presión atendiendo Kissimmee, St. Cloud, Celebration, Poinciana y el resto del condado de Osceola.",
       lic: "CON LICENCIA · ASEGURADOS · OPERACIÓN LOCAL",
       servicesH: "SERVICIOS", areaH: "ÁREA DE SERVICIO", callH: "LLAME AL TALLER",
       hoursLines: ["Lun–Sáb · 7am–6pm", "Atendiendo Kissimmee y", "todo el condado de Osceola, FL"],
@@ -160,7 +160,7 @@ export const TRANSLATIONS = {
     nav: { services: "Serviços", area: "Área de Atendimento", about: "Sobre", reviews: "Avaliações" },
     topbar: { tagline: "GRAMADO · JARDIM · CUIDADO — KISSIMMEE, FL" },
     hero: {
-      badge: "NOVO EM OSCEOLA · GRAMADO · JARDIM · PISCINA",
+      badge: "ATENDENDO OSCEOLA · GRAMADO · JARDIM · PISCINA",
       h1a: "UM QUINTAL", h1b: "DE QUE VOCÊ", h1c: "VAI SE", h1d: "GABAR.",
       sub: "Corte de grama, conserto de aspersores, poda de palmeiras, lavagem a pressão e limpeza de piscina para moradores de Kissimmee. Mesma equipe, mesmo caminhão, em toda visita.",
       hoursLabel: "HORÁRIO",
@@ -215,7 +215,7 @@ export const TRANSLATIONS = {
       area: "📍 Atendendo Kissimmee e o condado de Osceola, FL",
     },
     footer: {
-      tagline: "Um novo negócio familiar de gramado, jardim, piscina e lavagem a pressão atendendo Kissimmee, St. Cloud, Celebration, Poinciana e o resto do condado de Osceola.",
+      tagline: "Negócio familiar de gramado, jardim, piscina e lavagem a pressão atendendo Kissimmee, St. Cloud, Celebration, Poinciana e o resto do condado de Osceola.",
       lic: "LICENCIADOS · SEGURADOS · OPERAÇÃO LOCAL",
       servicesH: "SERVIÇOS", areaH: "ÁREA DE ATENDIMENTO", callH: "LIGUE PARA NÓS",
       hoursLines: ["Seg–Sáb · 7h–18h", "Atendendo Kissimmee e", "todo o condado de Osceola, FL"],

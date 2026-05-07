@@ -73,7 +73,7 @@ export default function TopBar({ phone, L, lang, setLang }) {
         <a href="#area"     onClick={() => setMenuOpen(false)} className="mobile-nav-link">{L.nav.area}</a>
         <a href="#about"    onClick={() => setMenuOpen(false)} className="mobile-nav-link">{L.nav.about}</a>
         <a href="#reviews"  onClick={() => setMenuOpen(false)} className="mobile-nav-link">{L.nav.reviews}</a>
-        <div style={{ padding: "14px 20px", borderBottom: "1px dashed var(--ink)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
+        <div className="mobile-nav-footer">
           <LangSwitcher lang={lang} setLang={setLang} />
           <a href={telHref}
              className="display"
@@ -81,7 +81,7 @@ export default function TopBar({ phone, L, lang, setLang }) {
                background: "var(--brick)", color: "var(--paper)",
                padding: "10px 16px", border: "2px solid var(--ink)",
                textDecoration: "none", fontSize: 15, letterSpacing: 1,
-               boxShadow: "3px 3px 0 var(--ink)",
+               boxShadow: "3px 3px 0 var(--ink)", whiteSpace: "nowrap",
              }}>☎ {phone}</a>
         </div>
       </div>

@@ -119,6 +119,24 @@ button { font: inherit; cursor: pointer; }
 
 .mobile-nav-link:hover { background: var(--paper-2); }
 
+.mobile-nav-footer {
+  padding: 14px 20px;
+  border-bottom: 1px dashed var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 424px) {
+  .mobile-nav-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
 /* Hero */
 .hero-inner {
   position: relative;
@@ -264,21 +282,23 @@ button { font: inherit; cursor: pointer; }
   opacity: 0.7;
 }
 
-/* ===== TABLET (≤1023px) ===== */
-@media (max-width: 1023px) {
-  .hero-inner {
-    gap: 32px;
-    padding: 60px 28px 80px;
-  }
-}
-
-/* ===== MOBILE (≤767px) ===== */
-@media (max-width: 767px) {
-  /* TopBar */
-  .topbar-inner { padding: 10px 16px; gap: 12px; }
+/* ===== TABLET — hamburger kicks in (≤1024px) ===== */
+@media (max-width: 1024px) {
+  /* TopBar: switch to hamburger — the full nav needs ~840px to render cleanly */
+  .topbar-inner { padding: 10px 20px; gap: 12px; }
   .topbar-nav { display: none; }
+  .topbar-tagline { display: none; }   /* hide tagline so topbar stays single-line */
   .topbar-mobile-right { display: flex; }
   .hamburger-btn { display: flex; }
+
+  /* Hero: tighten up at tablet widths */
+  .hero-inner { gap: 32px; padding: 60px 28px 80px; }
+}
+
+/* ===== MOBILE LAYOUT (≤767px) ===== */
+@media (max-width: 767px) {
+  /* TopBar */
+  .topbar-inner { padding: 10px 16px; }
 
   /* Hero */
   .hero-inner {
@@ -318,7 +338,7 @@ button { font: inherit; cursor: pointer; }
   .footer-container { padding: 0 20px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 36px; }
 
-  /* Phone stamp responsive override */
+  /* Phone stamp */
   .phone-stamp-hero a,
   .phone-stamp-bigcall a {
     padding: 12px 18px !important;
@@ -336,16 +356,15 @@ button { font: inherit; cursor: pointer; }
 
 /* ===== SMALL MOBILE (≤424px) ===== */
 @media (max-width: 424px) {
+  .topbar-inner { padding: 10px 12px; }
   .trust-grid { gap: 12px; padding: 20px 16px; }
   .services-container { padding: 0 16px; }
   .services-grid-compact { grid-template-columns: 1fr; }
   .process-container { padding: 0 16px; }
   .process-grid { grid-template-columns: 1fr; gap: 20px; }
+  .bigcall-inner { padding: 0 16px; }
   .footer-container { padding: 0 16px; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-  .topbar-inner { padding: 10px 12px; }
-  .bigcall-inner { padding: 0 16px; }
-  .topbar-tagline { display: none; }
 
   .phone-stamp-hero a,
   .phone-stamp-bigcall a {
