@@ -124,15 +124,6 @@ const TopBar = ({ phone, L, lang, setLang }) => (
         </a>
       </nav>
     </div>
-    <style>{`
-      @media (max-width: 768px) {
-        .topbar-link { display: none !important; }
-        .topbar-tagline { display: none; }
-        .topbar-name { font-size: 16px !important; }
-        .topbar-nav { gap: 12px !important; }
-        .topbar-phone { font-size: 13px !important; padding: 8px 12px !important; }
-      }
-    `}</style>
   </div>
 );
 
@@ -225,25 +216,12 @@ const Hero = ({ phone, L }) => (
         )}
       </div>
     </div>
-    <style>{`
-      @keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-50%) } }
-      @media (max-width: 768px) {
-        .hero-inner {
-          grid-template-columns: 1fr !important;
-          padding: 44px 20px 56px !important;
-          gap: 0 !important;
-        }
-        .hero-right { display: none !important; }
-        .hero-sub { font-size: 18px !important; }
-        .hero-cta { margin-top: 28px !important; gap: 20px !important; }
-      }
-    `}</style>
   </section>
 );
 
 const TrustStrip = ({ L }) => (
   <section style={{ background: "var(--paper-2)", borderBottom: "2px solid var(--ink)" }}>
-    <div style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 28px",
+    <div className="trust-grid" style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 28px",
                   display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 32 }}>
       {L.trust.map((s, i) => (
         <div key={i} style={{ textAlign: "center" }}>
@@ -258,15 +236,15 @@ const TrustStrip = ({ L }) => (
 );
 
 const ServicesSection = ({ compact, L }) => (
-  <section id="services" style={{ background: "var(--paper)", padding: "100px 0 80px" }}>
-    <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 28px" }}>
+  <section id="services" className="services-section" style={{ background: "var(--paper)", padding: "100px 0 80px" }}>
+    <div className="services-inner" style={{ maxWidth: 1280, margin: "0 auto", padding: "0 28px" }}>
       <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between",
                     gap: 32, marginBottom: 56, flexWrap: "wrap" }}>
         <div>
           <div style={{ marginBottom: 14 }}>
             <RibbonBanner color="var(--brick)">{L.services.ribbon}</RibbonBanner>
           </div>
-          <h2 className="display" style={{ fontSize: "clamp(48px, 6vw, 84px)", lineHeight: 0.95, margin: 0, maxWidth: 780 }}>
+          <h2 className="display" style={{ fontSize: "clamp(40px, 6vw, 84px)", lineHeight: 0.95, margin: 0, maxWidth: 780 }}>
             {L.services.h2a}<br/>{L.services.h2b}<br/>{L.services.h2c}
           </h2>
         </div>
@@ -277,7 +255,7 @@ const ServicesSection = ({ compact, L }) => (
 
       <Divider label={L.services.divider} />
 
-      <div style={{
+      <div className={`services-grid${compact ? " services-grid-compact" : ""}`} style={{
         marginTop: 40,
         display: "grid",
         gridTemplateColumns: compact ? "repeat(4, 1fr)" : "repeat(2, 1fr)",
@@ -373,16 +351,16 @@ const ServiceCard = ({ service, kind, no, index, compact, L }) => {
 };
 
 const ProcessStrip = ({ L }) => (
-  <section style={{ background: "var(--ink)", color: "var(--paper)", padding: "70px 0", borderBottom: "2px solid var(--ink)" }}>
-    <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 28px" }}>
+  <section className="process-section" style={{ background: "var(--ink)", color: "var(--paper)", padding: "70px 0", borderBottom: "2px solid var(--ink)" }}>
+    <div className="process-inner" style={{ maxWidth: 1280, margin: "0 auto", padding: "0 28px" }}>
       <div className="mono" style={{ fontSize: 12, letterSpacing: 4, opacity: 0.7, marginBottom: 14 }}>
         {L.process.kicker}
       </div>
-      <h2 className="display" style={{ fontSize: "clamp(40px, 5vw, 72px)", margin: "0 0 56px", lineHeight: 0.95 }}>
+      <h2 className="display" style={{ fontSize: "clamp(36px, 5vw, 72px)", margin: "0 0 48px", lineHeight: 0.95 }}>
         {L.process.h2}
       </h2>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 28 }}>
+      <div className="process-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 28 }}>
         {L.process.steps.map((s, i) => (
           <div key={i} style={{ position: "relative" }}>
             <div style={{
@@ -396,7 +374,7 @@ const ProcessStrip = ({ L }) => (
             <h3 className="display" style={{ fontSize: 24, margin: "0 0 10px" }}>{s.t.toUpperCase()}</h3>
             <p style={{ margin: 0, fontSize: 14, opacity: 0.85, lineHeight: 1.55 }}>{s.d}</p>
             {i < 3 && (
-              <div style={{
+              <div className="process-connector" style={{
                 position: "absolute", top: 26, right: -20, width: 24, height: 4,
                 background: "var(--paper)", opacity: 0.4,
               }} />
@@ -409,7 +387,7 @@ const ProcessStrip = ({ L }) => (
 );
 
 const BigCallSection = ({ phone, L }) => (
-  <section id="call" style={{
+  <section id="call" className="bigcall-section" style={{
     position: "relative",
     background: "var(--brick)", color: "var(--paper)",
     padding: "120px 0 140px",
@@ -424,7 +402,7 @@ const BigCallSection = ({ phone, L }) => (
       <SunBurst size={500} color="var(--gold)" />
     </div>
 
-    <div style={{ position: "relative", maxWidth: 1100, margin: "0 auto", padding: "0 28px", textAlign: "center" }}>
+    <div className="bigcall-inner" style={{ position: "relative", maxWidth: 1100, margin: "0 auto", padding: "0 28px", textAlign: "center" }}>
       <div className="mono" style={{ fontSize: 13, letterSpacing: 6, marginBottom: 18, opacity: 0.85 }}>
         {L.bigCall.kicker}
       </div>
@@ -450,8 +428,8 @@ const BigCallSection = ({ phone, L }) => (
 
 const Footer = ({ phone, L }) => (
   <footer id="about" style={{ background: "var(--forest)", color: "var(--paper)", padding: "60px 0 30px" }}>
-    <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 28px" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr 1fr", gap: 40, marginBottom: 50 }}>
+    <div className="footer-inner" style={{ maxWidth: 1280, margin: "0 auto", padding: "0 28px" }}>
+      <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr 1fr", gap: 40, marginBottom: 50 }}>
         <div>
           <div className="display" style={{ fontSize: 32, lineHeight: 1, marginBottom: 12 }}>SANCORPORATION</div>
           <p style={{ fontSize: 14, opacity: 0.85, maxWidth: 320, lineHeight: 1.55 }}>
