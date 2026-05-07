@@ -90,7 +90,7 @@ const TopBar = ({ phone, L, lang, setLang }) => (
       maxWidth: 1280, margin: "0 auto", padding: "10px 28px",
       display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24,
     }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 14, flexShrink: 0 }}>
         <div style={{
           width: 44, height: 44, borderRadius: "50%",
           background: "var(--forest)", color: "var(--paper)",
@@ -99,30 +99,40 @@ const TopBar = ({ phone, L, lang, setLang }) => (
           fontFamily: "Alfa Slab One", fontSize: 20,
         }}>S</div>
         <div style={{ lineHeight: 1.1 }}>
-          <div className="display" style={{ fontSize: 20 }}>SANCORPORATION</div>
-          <div className="mono" style={{ fontSize: 10, letterSpacing: 2, opacity: 0.7 }}>
+          <div className="display topbar-name" style={{ fontSize: 20 }}>SANCORPORATION</div>
+          <div className="mono topbar-tagline" style={{ fontSize: 10, letterSpacing: 2, opacity: 0.7 }}>
             {L.topbar.tagline}
           </div>
         </div>
       </div>
-      <nav style={{ display: "flex", alignItems: "center", gap: 24 }}>
-        <a href="#services" className="mono" style={{ textDecoration: "none", fontSize: 12, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700 }}>{L.nav.services}</a>
-        <a href="#area" className="mono" style={{ textDecoration: "none", fontSize: 12, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700 }}>{L.nav.area}</a>
-        <a href="#about" className="mono" style={{ textDecoration: "none", fontSize: 12, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700 }}>{L.nav.about}</a>
-        <a href="#reviews" className="mono" style={{ textDecoration: "none", fontSize: 12, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700 }}>{L.nav.reviews}</a>
+      <nav className="topbar-nav" style={{ display: "flex", alignItems: "center", gap: 24 }}>
+        <a href="#services" className="mono topbar-link" style={{ textDecoration: "none", fontSize: 12, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700 }}>{L.nav.services}</a>
+        <a href="#area" className="mono topbar-link" style={{ textDecoration: "none", fontSize: 12, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700 }}>{L.nav.area}</a>
+        <a href="#about" className="mono topbar-link" style={{ textDecoration: "none", fontSize: 12, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700 }}>{L.nav.about}</a>
+        <a href="#reviews" className="mono topbar-link" style={{ textDecoration: "none", fontSize: 12, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700 }}>{L.nav.reviews}</a>
         <LangSwitcher lang={lang} setLang={setLang} />
         <a href={`tel:${phone.replace(/[^0-9+]/g,"")}`}
-           className="display"
+           className="display topbar-phone"
            style={{
              background: "var(--brick)", color: "var(--paper)",
              padding: "10px 18px", border: "2px solid var(--ink)",
              textDecoration: "none", fontSize: 16, letterSpacing: 1,
              boxShadow: "3px 3px 0 var(--ink)",
+             whiteSpace: "nowrap",
            }}>
           ☎ {phone}
         </a>
       </nav>
     </div>
+    <style>{`
+      @media (max-width: 768px) {
+        .topbar-link { display: none !important; }
+        .topbar-tagline { display: none; }
+        .topbar-name { font-size: 16px !important; }
+        .topbar-nav { gap: 12px !important; }
+        .topbar-phone { font-size: 13px !important; padding: 8px 12px !important; }
+      }
+    `}</style>
   </div>
 );
 
@@ -145,7 +155,7 @@ const Hero = ({ phone, L }) => (
       <PalmSilhouette color="#0a1f12" height={280} />
     </div>
 
-    <div style={{
+    <div className="hero-inner" style={{
       position: "relative",
       maxWidth: 1280, margin: "0 auto",
       padding: "80px 28px 100px",
@@ -160,7 +170,7 @@ const Hero = ({ phone, L }) => (
           </span>
         </div>
         <h1 className="display" style={{
-          fontSize: "clamp(56px, 8vw, 124px)",
+          fontSize: "clamp(48px, 8vw, 124px)",
           lineHeight: 0.88,
           margin: "10px 0 18px",
           textShadow: "4px 4px 0 var(--brick)",
@@ -169,11 +179,11 @@ const Hero = ({ phone, L }) => (
           <span style={{ color: "var(--gold)" }}>{L.hero.h1c}</span><br/>
           {L.hero.h1d}
         </h1>
-        <p className="editorial" style={{ fontSize: 22, maxWidth: 560, marginTop: 24, lineHeight: 1.35, fontStyle: "italic" }}>
+        <p className="editorial hero-sub" style={{ fontSize: 22, maxWidth: 560, marginTop: 24, lineHeight: 1.35, fontStyle: "italic" }}>
           {L.hero.sub}
         </p>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 28, marginTop: 40, flexWrap: "wrap" }}>
+        <div className="hero-cta" style={{ display: "flex", alignItems: "center", gap: 28, marginTop: 40, flexWrap: "wrap" }}>
           <PhoneStamp phone={phone} rotate={-3} callTag={L.hero.callTag} />
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
             <span className="mono" style={{ fontSize: 11, letterSpacing: 3, opacity: 0.7 }}>{L.hero.hoursLabel}</span>
@@ -183,7 +193,7 @@ const Hero = ({ phone, L }) => (
         </div>
       </div>
 
-      <div style={{ position: "relative", minHeight: 420 }}>
+      <div className="hero-right" style={{ position: "relative", minHeight: 420 }}>
         <div style={{ position: "absolute", top: 20, right: 20, color: "var(--paper)" }}>
           <SealBadge size={260} topText="KISSIMMEE · FLORIDA · OSCEOLA CO. ·"
                      center="SAN" sub="CO." rotate={-8} />
@@ -215,7 +225,19 @@ const Hero = ({ phone, L }) => (
         )}
       </div>
     </div>
-    <style>{`@keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-50%) } }`}</style>
+    <style>{`
+      @keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+      @media (max-width: 768px) {
+        .hero-inner {
+          grid-template-columns: 1fr !important;
+          padding: 44px 20px 56px !important;
+          gap: 0 !important;
+        }
+        .hero-right { display: none !important; }
+        .hero-sub { font-size: 18px !important; }
+        .hero-cta { margin-top: 28px !important; gap: 20px !important; }
+      }
+    `}</style>
   </section>
 );
 
