@@ -20,14 +20,10 @@ export default function Hero({ phone, L }) {
         <PalmSilhouette color="#0a1f12" height={280} />
       </div>
 
-      <div style={{
-        position: "relative",
-        maxWidth: 1280, margin: "0 auto",
-        padding: "80px 28px 100px",
-        display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 48, alignItems: "center",
-      }}>
+      <div className="hero-inner">
+        {/* Left: copy */}
         <div>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+          <div className="hero-badge-wrap">
             <span style={{ display: "inline-block", padding: "6px 14px", background: "var(--gold)", color: "var(--ink)",
                            border: "2px solid var(--ink)", letterSpacing: 3, fontSize: 11, fontWeight: 700 }}
                   className="mono">
@@ -35,7 +31,7 @@ export default function Hero({ phone, L }) {
             </span>
           </div>
           <h1 className="display" style={{
-            fontSize: "clamp(56px, 8vw, 124px)",
+            fontSize: "clamp(44px, 8vw, 124px)",
             lineHeight: 0.88,
             margin: "10px 0 18px",
             textShadow: "4px 4px 0 var(--brick)",
@@ -44,12 +40,14 @@ export default function Hero({ phone, L }) {
             <span style={{ color: "var(--gold)" }}>{L.hero.h1c}</span><br/>
             {L.hero.h1d}
           </h1>
-          <p className="editorial" style={{ fontSize: 22, maxWidth: 560, marginTop: 24, lineHeight: 1.35, fontStyle: "italic" }}>
+          <p className="editorial" style={{ fontSize: "clamp(16px, 2.5vw, 22px)", maxWidth: 560, marginTop: 24, lineHeight: 1.35, fontStyle: "italic" }}>
             {L.hero.sub}
           </p>
 
           <div style={{ display: "flex", alignItems: "center", gap: 28, marginTop: 40, flexWrap: "wrap" }}>
-            <PhoneStamp phone={phone} rotate={-3} callTag={L.hero.callTag} />
+            <div className="phone-stamp-hero">
+              <PhoneStamp phone={phone} rotate={-3} callTag={L.hero.callTag} />
+            </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
               <span className="mono" style={{ fontSize: 11, letterSpacing: 3, opacity: 0.7 }}>{L.hero.hoursLabel}</span>
               <span className="display" style={{ fontSize: 18 }}>{L.hero.hours}</span>
@@ -58,7 +56,8 @@ export default function Hero({ phone, L }) {
           </div>
         </div>
 
-        <div style={{ position: "relative", minHeight: 420 }}>
+        {/* Right: decorative (hidden on mobile) */}
+        <div className="hero-deco">
           <div style={{ position: "absolute", top: 20, right: 20, color: "var(--paper)" }}>
             <SealBadge size={260} topText="KISSIMMEE · FLORIDA · OSCEOLA CO. ·"
                        center="SAN" sub="CO." rotate={-8} />
